@@ -8,10 +8,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
 
+// Methods for connecting with the db
 public class DB {	
 	private static Connection conn = null;
 	
-	//Conecta com o banco de dados
+	// Connects with the db
 	public static Connection getConnection() {
 		if(conn == null) {
 			try {
@@ -25,7 +26,7 @@ public class DB {
 		return conn;
 	}
 	
-	//Carrega as propriedades de conexão com o banco
+	// Loads the properties for connecting with the db
 	private static Properties loadProperties() {
 		try (FileInputStream fs = new FileInputStream("db.properties")) {
 			Properties props = new Properties();
@@ -38,7 +39,7 @@ public class DB {
 		return null;
 	}
 	
-	//Fecha conexão com o banco
+	// Closes the connection with the db
 		public static void closeConnection() {
 			if(conn != null) {
 				try {
@@ -49,7 +50,7 @@ public class DB {
 			}
 		}
 	
-	//Fecha um statement
+	// Closes a statement
 	public static void closeStatement(Statement st) {
 		if(st != null) {
 			try {
@@ -60,7 +61,7 @@ public class DB {
 		}
 	}
 	
-	//Fecha um resultSet
+	// Closes a resultset
 	public static void closeResultSet(ResultSet rs) {
 		if(rs != null) {
 			try {
