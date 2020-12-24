@@ -1,9 +1,11 @@
 package db;
 
-//Exceção de integridade.
-//Motivo: quando fazemos uma deleção em um banco de dados,
-//pode ocorrer de deletarmos a linha de uma tabela que é chave
-//estrangeira de outra, isso dará um problema de integridade.
+// Integrity exception
+// Reason: when we perform a deletion in a db, 
+// we may unintentionally delete a row of a table 
+// that is the foreign key of another one, this will
+// cause a integrity problem.
+
 public class DbIntegrityException extends RuntimeException{
 
 	private static final long serialVersionUID = 1L;
